@@ -6,9 +6,10 @@ import { useSecureAPI_Link } from "../../hooks/useAPI_Link";
 import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Container from "../../components/container/Container";
 
 const MyProfile = () => {
-  const { isDark, user, updateUser } = useContextValue();
+  const { user, updateUser } = useContextValue();
 
   const secureAPI_Link = useSecureAPI_Link();
 
@@ -75,126 +76,120 @@ const MyProfile = () => {
       <Helmet>
         <title>Profile | Track & Retrieve</title>
       </Helmet>
-      <section className={`${isDark && "dark"}`}>
-        <section className="px-5 w-full pb-16 pt-10 bg-white dark:bg-darkThree text-darkTwo dark:text-lightTwo">
-          <section className="max-w-7xl mx-auto">
-            <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-800 dark:text-gray-200">
-              My Profile
-            </h1>
+      <Container>
+        <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-800 dark:text-gray-200">
+          My Profile
+        </h1>
 
-            <div className="grid lg:grid-cols-2 gap-16 mt-16">
-              <div>
-                <div className="p-5 md:p-10 border border-gray-300 dark:border-gray-600">
-                  <img className="w-full" src={user?.photoURL} alt="" />
-                  <h1 className="mt-5 text-4xl font-bold text-gray-800 dark:text-gray-200">
-                    {user?.displayName}
-                  </h1>
-                  <h1 className="mt-5 text-2xl font-bold text-gray-800 dark:text-gray-200">
-                    {user?.email}
-                  </h1>
+        <div className="grid lg:grid-cols-2 gap-16 mt-16">
+          <div>
+            <div className="p-5 md:p-10 border border-gray-300 dark:border-gray-600">
+              <img className="w-full" src={user?.photoURL} alt="" />
+              <h1 className="mt-5 text-4xl font-bold text-gray-800 dark:text-gray-200">
+                {user?.displayName}
+              </h1>
+              <h1 className="mt-5 text-2xl font-bold text-gray-800 dark:text-gray-200">
+                {user?.email}
+              </h1>
+            </div>
+
+            <div className="p-5 md:p-10 border border-gray-300 dark:border-gray-600 mt-16">
+              <h2 className="text-xl font-semibold mb-4">Update Profile</h2>
+              <form onSubmit={handleSubmit}>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Name</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="name"
+                    name="name"
+                    defaultValue={user?.displayName}
+                    className="input input-bordered"
+                    required
+                  />
                 </div>
 
-                <div className="p-5 md:p-10 border border-gray-300 dark:border-gray-600 mt-16">
-                  <h2 className="text-xl font-semibold mb-4">Update Profile</h2>
-                  <form onSubmit={handleSubmit}>
-                    <div className="form-control">
-                      <label className="label">
-                        <span className="label-text">Name</span>
-                      </label>
-                      <input
-                        type="text"
-                        placeholder="name"
-                        name="name"
-                        defaultValue={user?.displayName}
-                        className="input input-bordered"
-                        required
-                      />
-                    </div>
-
-                    <div className="form-control">
-                      <label className="label">
-                        <span className="label-text">Photo URL</span>
-                      </label>
-                      <input
-                        type="url"
-                        placeholder="photo"
-                        name="photo"
-                        defaultValue={user?.photoURL}
-                        className="input input-bordered"
-                        required
-                      />
-                    </div>
-
-                    <button className="btn w-full mt-4">Update</button>
-                  </form>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Photo URL</span>
+                  </label>
+                  <input
+                    type="url"
+                    placeholder="photo"
+                    name="photo"
+                    defaultValue={user?.photoURL}
+                    className="input input-bordered"
+                    required
+                  />
                 </div>
-              </div>
 
-              {/* Add more profile information */}
+                <button className="btn w-full mt-4">Update</button>
+              </form>
+            </div>
+          </div>
 
+          {/* Add more profile information */}
+
+          <div>
+            <div className="p-5 md:p-10 border border-gray-300 dark:border-gray-600">
               <div>
-                <div className="p-5 md:p-10 border border-gray-300 dark:border-gray-600">
-                  <div>
-                    <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-200">
-                      Your Total Post ({items?.length})
-                    </h1>
+                <h1 className="text-3xl font-bold text-gray-800 dark:text-gray-200">
+                  Your Total Post ({items?.length})
+                </h1>
 
-                    <div className="mt-5 space-y-3">
-                      {items?.map((item) => (
-                        <div
-                          key={item._id}
-                          className="border-b border-gray-300 dark:border-gray-600 flex items-center justify-between"
-                        >
-                          <div>
-                            <h2 className="text-xl font-semibold">
-                              {item.title}
-                            </h2>
-                            <p className="text-gray-500 dark:text-gray-400">
-                              {new Date(item?.date).toDateString()}
-                            </p>
-                          </div>
-                          <button className="mr-2">
-                            <Link to={`/items/${item._id}`}>
-                              <FaEye />
-                            </Link>
-                          </button>
-                        </div>
-                      ))}
+                <div className="mt-5 space-y-3">
+                  {items?.map((item) => (
+                    <div
+                      key={item._id}
+                      className="border-b border-gray-300 dark:border-gray-600 flex items-center justify-between"
+                    >
+                      <div>
+                        <h2 className="text-xl font-semibold">{item.title}</h2>
+                        <p className="text-gray-500 dark:text-gray-400">
+                          {new Date(item?.date).toDateString()}
+                        </p>
+                      </div>
+                      <button className="mr-2">
+                        <Link to={`/items/${item._id}`}>
+                          <FaEye />
+                        </Link>
+                      </button>
                     </div>
+                  ))}
+                </div>
 
-                    <h1 className="text-3xl mt-8 font-bold text-gray-800 dark:text-gray-200">
-                      Total Recovered ({recoveredItems?.length})
-                    </h1>
+                <h1 className="text-3xl mt-8 font-bold text-gray-800 dark:text-gray-200">
+                  Total Recovered ({recoveredItems?.length})
+                </h1>
 
-                    <div className="mt-5 space-y-3">
-                      {recoveredItems?.map((item) => (
-                        <div
-                          key={item._id}
-                          className="border-b border-gray-300 dark:border-gray-600 flex items-center justify-between"
-                        >
-                          <div>
-                            <h2 className="text-xl font-semibold">
-                              {item?.postItems?.title}
-                            </h2>
-                            <p className="text-gray-500 dark:text-gray-400">
-                              {new Date(item?.recoveredDate).toDateString()}
-                            </p>
-                          </div>
-                          <button className="mr-2">
-                            <Link to={`/items/${item.postItems._id}`}>
-                              <FaEye />
-                            </Link>
-                          </button>
-                        </div>
-                      ))}
+                <div className="mt-5 space-y-3">
+                  {recoveredItems?.map((item) => (
+                    <div
+                      key={item._id}
+                      className="border-b border-gray-300 dark:border-gray-600 flex items-center justify-between"
+                    >
+                      <div>
+                        <h2 className="text-xl font-semibold">
+                          {item?.postItems?.title}
+                        </h2>
+                        <p className="text-gray-500 dark:text-gray-400">
+                          {new Date(item?.recoveredDate).toDateString()}
+                        </p>
+                      </div>
+                      <button className="mr-2">
+                        <Link to={`/items/${item.postItems._id}`}>
+                          <FaEye />
+                        </Link>
+                      </button>
                     </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>
-          </section>
-        </section>
-      </section>
+          </div>
+        </div>
+      </Container>
     </>
   );
 };
