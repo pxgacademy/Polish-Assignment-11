@@ -78,7 +78,7 @@ const Navbar = () => {
 
   return (
     <nav>
-      <div className="navbar bg-transparent p-0 border-b border-base-300">
+      <div className="navbar bg-transparent p-0">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="mr-3 lg:hidden">
