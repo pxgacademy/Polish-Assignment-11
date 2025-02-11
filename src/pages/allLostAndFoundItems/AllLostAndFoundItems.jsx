@@ -91,7 +91,7 @@ const AllLostAndFoundItems = () => {
         <title>All Items | Track & Retrieve</title>
       </Helmet>
       <Container>
-        <section className="max-w-7xl mx-auto">
+
           <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-800 dark:text-gray-200">
             All <span className="text-error">Lost</span> &{" "}
             <span className="text-info">Found</span> Items
@@ -153,7 +153,7 @@ const AllLostAndFoundItems = () => {
             </form>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-10">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5 mt-10">
             {items?.map((item) => (
               <ItemCard key={item._id} item={item} />
             ))}
@@ -211,7 +211,6 @@ const AllLostAndFoundItems = () => {
               </div>
             </div>
           )}
-        </section>
       </Container>
     </>
   );
