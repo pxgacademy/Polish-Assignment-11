@@ -13,7 +13,7 @@ import { Helmet } from "react-helmet";
 import Container from "../../components/container/Container";
 
 const AllRecovered = () => {
-  const { isDark, user } = useContextValue();
+  const { user } = useContextValue();
   const secureAPI_Link = useSecureAPI_Link();
   const [isGrid, setIsGrid] = useState(false);
 
