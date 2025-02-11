@@ -1,12 +1,19 @@
 import PropTypes from "prop-types";
 import useContextValue from "../../hooks/useContextValue";
 
-const Container = ({ children, className = "", paddingX = true, paddingY = 'py-16' }) => {
+const Container = ({
+  children,
+  className = "",
+  paddingX = true,
+  paddingY = "py-16",
+}) => {
   const { isDark } = useContextValue();
   return (
     <section className={`${isDark && "dark"}`}>
       <section
-        className={`w-full max-w-screen-2xl mx-auto bg-gray-50 dark:bg-gray-900 text-darkTwo dark:text-lightTwo ${className} ${paddingX && 'px-5 lg:px-10'} ${paddingY}`}
+        className={`w-full max-w-screen-2xl mx-auto bg-gray-50 dark:bg-gray-900 text-darkTwo dark:text-lightTwo ${className} ${
+          paddingX && "px-5 lg:px-10"
+        } ${paddingY}`}
       >
         {children}
       </section>

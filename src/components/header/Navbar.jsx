@@ -115,7 +115,7 @@ const Navbar = () => {
           <div className="mr-4">
             <button
               onClick={toggleDarkMode}
-              className="btn btn-circle btn-ghost hover:bg-gray-100 dark:hover:bg-darkTwo text-2xl"
+              className="h-10 w-10 flex items-center justify-center rounded-full hover:bg-gray-100 dark:hover:bg-darkOne text-2xl"
             >
               {isDark ? <IoSunny /> : <IoMdMoon />}
             </button>
