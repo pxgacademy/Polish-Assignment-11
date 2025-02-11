@@ -6,7 +6,7 @@ const Footer = () => {
 
   return (
     <footer className={`${isDark && "dark"}`}>
-      <section className="px-5 w-full max-w-screen-2xl mx-auto bg-base-200">
+      <section className="px-5 w-full max-w-screen-2xl mx-auto bg-gray-200 dark:bg-gray-800">
         <section className="max-w-7xl mx-auto pt-7">
           <footer className="footer footer-center p-10 text-darkTwo dark:text-lightTwo">
             <aside>

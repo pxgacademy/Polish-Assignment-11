@@ -12,15 +12,22 @@ html {
     -webkit-appearance: none;
     margin: 0;
   }
+
+  .active button{
+    @apply bg-blue-600 text-white;
+  }
 }
 
 * {
   @apply transition-colors duration-100;
 }
 
+.nav_links button{
+  @apply font-semibold rounded-md
+}
+
 .active button {
-  color: rgb(0, 102, 255);
-  border-bottom: 1px solid;
+  @apply border-b border-black/60 dark:text-yellow-300 dark:border-yellow-300;
 }
 
 .navbar-center button {
