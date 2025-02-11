@@ -1,5 +1,4 @@
 import { useQuery } from "@tanstack/react-query";
-import useContextValue from "../../hooks/useContextValue";
 import Swal from "sweetalert2";
 import Loading from "../../components/loading/Loading";
 import ItemCard from "../allLostAndFoundItems/ItemCard";
@@ -11,9 +10,9 @@ import TipsAndResources from "./TipsAndResources";
 import FAQSection from "./FAQ";
 import { useEffect } from "react";
 import { Helmet } from "react-helmet";
+import Container from "../../components/container/Container";
 
 const Home = () => {
-  const { isDark } = useContextValue();
   const API_Link = useAPI_Link();
 
   useEffect(() => {
@@ -48,39 +47,37 @@ const Home = () => {
       <Helmet>
         <title>Home | Track & Retrieve</title>
       </Helmet>
-      <section className={`${isDark && "dark"}`}>
-        <section className="px-5 w-full pb-16 pt-10 bg-white dark:bg-darkThree text-darkTwo dark:text-lightTwo">
-          <section className="max-w-7xl mx-auto">
-            {/* Banner One */}
-            <BannerOne />
 
-            <div className="mt-16">
-              <Slider />
-            </div>
+      <Container paddingX={false} paddingY="pb-16" >
+          {/* Banner One */}
+          <BannerOne />
 
-            <h2 className="text-3xl font-semibold text-center mt-16">
-              <span className="text-error">Lost</span> and{" "}
-              <span className="text-info">Found</span> Items
-            </h2>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 mt-7">
-              {items.map((item) => (
-                <ItemCard key={item._id} item={item} />
-              ))}
-            </div>
-            <div className="flex justify-center mt-8">
-              <Link to="/allItems">
-                <button className="btn btn-neutral btn-wide">
-                  View All Items
-                </button>
-              </Link>
-            </div>
+          <div className="mt-16">
+            <Slider />
+          </div>
 
-            <TipsAndResources />
+          <h2 className="text-3xl font-semibold text-center mt-16">
+            <span className="text-error">Lost</span> and{" "}
+            <span className="text-info">Found</span> Items
+          </h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-3 lg:gap-5 mt-7 px-5 lg:px-10">
+            {items.map((item) => (
+              <ItemCard key={item._id} item={item} />
+            ))}
+          </div>
+          <div className="flex justify-center mt-8">
+            <Link to="/allItems">
+              <button className="btn btn-neutral btn-wide">
+                View All Items
+              </button>
+            </Link>
+          </div>
 
-            <FAQSection />
-          </section>
-        </section>
-      </section>
+          <TipsAndResources />
+
+          <FAQSection />
+
+      </Container>
     </>
   );
 };

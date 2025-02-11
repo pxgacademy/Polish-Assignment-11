@@ -7,17 +7,17 @@ const ItemCard = ({ item }) => {
 
   return (
     <div
-      className={`border ${
+      className={`group border ${
         status === "Recovered"
           ? "border-green-400"
           : postType === "Lost"
-          ? "border-error"
-          : "border-info"
-      } p-3 rounded-lg flex flex-col shadow-md`}
+          ? "border-error lg:border-error/40 bg-error/5 hover:border-error"
+          : "border-info lg:border-info/40 bg-info/5 hover:border-info"
+      } p-3 rounded-lg flex flex-col shadow-md hover:scale-[101%] hover:-translate-y-1 transition-all duration-300`}
     >
-      <div className="w-full md:h-64 lg:h-56 ">
+      <div className="w-full md:h-64 lg:h-56 rounded-md overflow-hidden">
         <img
-          className="w-full h-full object-cover mb-3 rounded-md"
+          className="w-full h-full object-cover mb-3  transition-all duration-200"
           src={thumbnail}
           alt={title}
         />

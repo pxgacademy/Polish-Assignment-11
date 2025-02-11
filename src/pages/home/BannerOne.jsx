@@ -1,7 +1,6 @@
 import { Typewriter } from "react-simple-typewriter";
 import { Link } from "react-router-dom";
 import { motion } from "motion/react";
-import bannerImg from "../../assets/banner-img.webp";
 import img1 from "../../assets/img-1.avif";
 import img2 from "../../assets/img-2.jpg";
 import img3 from "../../assets/img-3.jpg";
@@ -9,12 +8,12 @@ import img4 from "../../assets/img-4.jpg";
 
 const BannerOne = () => {
   return (
-    <div className="w-full overflow-hidden bg-[url(./assets/banner-img.webp)]">
-      <div className="w-full flex flex-col-reverse lg:flex-row gap-8">
-        <div className="flex-1 flex items-center p-4 lg:p-0">
-          <div className="bg-black/30 backdrop-blur-sm lg:ml-4 p-3 border border-white/40 shadow-lg">
+    <div className="w-full overflow-hidden bg-[url(./assets/banner-img.jpg)] bg-no-repeat bg-center bg-cover p-5 lg:p-10">
+      <div className="w-full flex flex-col-reverse lg:flex-row gap-10 lg:gap-20">
+        <div className="flex-1 flex items-center">
+          <div className="bg-white/30 backdrop-blur p-3 border border-white/70 shadow-lg text-darkThree rounded-lg">
             <div className="min-h-11">
-              <span className="text-xl md:text-4xl font-bold text-white">
+              <span className="text-xl md:text-4xl font-bold">
                 <Typewriter
                   words={["FIND YOUR LOST ITEM", "SEND YOUR FOUND ITEM"]}
                   loop={false}
@@ -24,7 +23,7 @@ const BannerOne = () => {
                 />
               </span>
             </div>
-            <p className="text-white ">
+            <p>
               Welcome to <span className="font-semibold">Track & Retrieve</span> - the ultimate platform
               for finding and posting lost or found items. Whether you've
               misplaced something precious or discovered an item, we're here to
@@ -34,17 +33,17 @@ const BannerOne = () => {
 
             <div className="w-full mt-4 grid grid-cols-2 gap-3">
               <Link to="/addItems">
-                <button className="btn w-full bg-white">LOST</button>
+                <button className="btn w-full bg-white border-none hover:bg-gray-50 text-darkThree">LOST</button>
               </Link>
               <Link to="/addItems">
-                <button className="btn w-full bg-white">FOUND</button>
+                <button className="btn w-full bg-white border-none hover:bg-gray-50 text-darkThree">FOUND</button>
               </Link>
             </div>
           </div>
         </div>
         <div className="flex-1">
           <div className="w-full h-full flex items-center">
-            <div className="grid grid-cols-2 p-6">
+            <div className="grid grid-cols-2">
               <motion.img
                 initial={{
                   y: 0,
@@ -56,7 +55,7 @@ const BannerOne = () => {
                     repeat: Infinity,
                   },
                 }}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-t-[50px] rounded-l-[50px]"
                 src={img1}
                 alt=""
               />
@@ -71,7 +70,7 @@ const BannerOne = () => {
                     repeat: Infinity,
                   },
                 }}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-t-[50px] rounded-r-[50px]"
                 src={img2}
                 alt=""
               />
@@ -86,7 +85,7 @@ const BannerOne = () => {
                     repeat: Infinity,
                   },
                 }}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-b-[50px] rounded-l-[50px]"
                 src={img3}
                 alt=""
               />
@@ -101,7 +100,7 @@ const BannerOne = () => {
                     repeat: Infinity,
                   },
                 }}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover rounded-b-[50px] rounded-r-[50px]"
                 src={img4}
                 alt=""
               />
