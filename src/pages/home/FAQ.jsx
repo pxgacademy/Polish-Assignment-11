@@ -56,7 +56,7 @@ FAQItem.propTypes = {
 const FAQSection = () => {
   return (
     <section className="px-5 lg:px-10">
-      <div className="bg-gray-100 dark:bg-darkTwo p-5 lg:p-10 rounded-3xl shadow-md mt-16">
+      <div className="bg-gray-100 dark:bg-gray-950/60 p-5 lg:p-10 rounded-3xl shadow-md mt-16">
       <h2 className="text-2xl font-bold mb-6">Frequently Asked Questions</h2>
       {faqs.map((faq, index) => (
         <FAQItem key={index} question={faq.question} answer={faq.answer} />

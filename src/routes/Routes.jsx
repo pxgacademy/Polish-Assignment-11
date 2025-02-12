@@ -12,6 +12,7 @@ import UpdateItem from "../pages/updateItem/UpdateItem";
 import AllRecovered from "../pages/allRecovered/AllRecovered";
 import ErrorPage from "../components/errorrPage/ErrorPage";
 import MyProfile from "../pages/myProfile/MyProfile";
+import Contact from "../pages/contact/Contact";
 
 export const router = createBrowserRouter([
   {
@@ -67,6 +68,10 @@ export const router = createBrowserRouter([
             <AddItems />
           </PrivateRoutes>
         ),
+      },
+      {
+        path: "contact-us",
+        element: <Contact />,
       },
       {
         path: "my-profile",

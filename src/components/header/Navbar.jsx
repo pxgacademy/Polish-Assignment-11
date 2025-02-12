@@ -69,9 +69,24 @@ const Navbar = () => {
       <NavLink to="/">
         <button>Home</button>
       </NavLink>
-
       <NavLink to="/allItems">
-        <button>Lost & Found items</button>
+        <button>All Items</button>
+      </NavLink>
+      {user && (
+        <>
+          <NavLink to="/addItems">
+            <button>Add Item</button>
+          </NavLink>
+          <NavLink to="/allRecovered">
+            <button>Recovered Items</button>
+          </NavLink>
+          <NavLink to="/myItems">
+            <button>Manage Items</button>
+          </NavLink>
+        </>
+      )}
+      <NavLink to="/contact-us">
+        <button>Contact Us</button>
       </NavLink>
     </>
   );
@@ -172,15 +187,6 @@ const Navbar = () => {
                       Profile
                       <span className="badge">New</span>
                     </Link>
-                  </li>
-                  <li>
-                    <Link to="/addItems">Add Lost or Found Item</Link>
-                  </li>
-                  <li>
-                    <Link to="/allRecovered">All Recovered Items</Link>
-                  </li>
-                  <li>
-                    <Link to="/myItems">Manage My Items</Link>
                   </li>
                   <li className="md:hidden">
                     <a onClick={handleSignOut}>Signout</a>

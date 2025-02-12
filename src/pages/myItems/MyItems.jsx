@@ -7,6 +7,7 @@ import { useSecureAPI_Link } from "../../hooks/useAPI_Link";
 import MyItemsTableRow from "./MyItemsTableRow";
 import { Helmet } from "react-helmet";
 import Container from "../../components/container/Container";
+import SectionHeader from "../../components/container/SectionHeader";
 
 const MyItems = () => {
   const { user } = useContextValue();
@@ -44,9 +45,7 @@ const MyItems = () => {
         <title>My Items | Track & Retrieve</title>
       </Helmet>
       <Container>
-        <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-800 dark:text-gray-200">
-          My Items
-        </h1>
+        <SectionHeader>My Items</SectionHeader>
 
         {items?.length === 0 ? (
           <div className="max-w-lg mx-auto mt-14 rounded-full overflow-hidden">
@@ -57,7 +56,7 @@ const MyItems = () => {
             <div className="overflow-x-auto">
               <table className="table table-zebra">
                 {/* head */}
-                <thead className="bg-base-300 text-darkTwo dark:text-lightTwo text-sm">
+                <thead className="bg-base-300 dark:bg-gray-950/60 text-darkTwo dark:text-lightTwo text-sm">
                   <tr>
                     <th>#</th>
                     <th>Creator</th>

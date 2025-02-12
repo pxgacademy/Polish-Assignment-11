@@ -13,7 +13,7 @@ html {
     margin: 0;
   }
 
-  .active button{
+  .active button {
     @apply bg-blue-600 text-white;
   }
 }
@@ -22,8 +22,8 @@ html {
   @apply transition-colors duration-100;
 }
 
-.nav_links button{
-  @apply font-semibold rounded-md
+.nav_links button {
+  @apply font-semibold rounded-md;
 }
 
 .active button {
@@ -34,4 +34,8 @@ html {
   padding: 4px 12px;
 }
 
-
+/* Contact Form Design */
+#contact_form input,
+#contact_form textarea {
+  @apply w-full px-4 py-2 bg-transparent border border-gray-300 dark:border-gray-700 rounded-md focus:outline-none;
+}

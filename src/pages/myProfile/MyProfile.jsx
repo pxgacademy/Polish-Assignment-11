@@ -7,6 +7,7 @@ import { FaEye } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Container from "../../components/container/Container";
+import SectionHeader from "../../components/container/SectionHeader";
 
 const MyProfile = () => {
   const { user, updateUser } = useContextValue();
@@ -77,10 +78,7 @@ const MyProfile = () => {
         <title>Profile | Track & Retrieve</title>
       </Helmet>
       <Container>
-        <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-800 dark:text-gray-200">
-          My Profile
-        </h1>
-
+        <SectionHeader>My Profile</SectionHeader>
         <div className="grid lg:grid-cols-2 gap-16 mt-16">
           <div>
             <div className="p-5 md:p-10 border border-gray-300 dark:border-gray-600">

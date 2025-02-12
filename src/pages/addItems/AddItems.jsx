@@ -10,6 +10,7 @@ import { useSecureAPI_Link } from "../../hooks/useAPI_Link";
 import { useNavigate } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Container from "../../components/container/Container";
+import SectionHeader from "../../components/container/SectionHeader";
 
 const AddItems = () => {
   const { user } = useContextValue();
@@ -66,11 +67,7 @@ const AddItems = () => {
         <title>Add Items | Track & Retrieve</title>
       </Helmet>
       <Container>
-        <div>
-          <h1 className="text-2xl font-bold text-center text-gray-800 dark:text-gray-200">
-            Add New Item
-          </h1>
-        </div>
+        <SectionHeader>Add New Item</SectionHeader>
         <div>
           <form
             onSubmit={handleSubmit}

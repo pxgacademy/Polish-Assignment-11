@@ -83,7 +83,7 @@ Resource.propTypes = {
 const TipsAndResources = () => {
   return (
     <section className="px-5 lg:px-10">
-      <div className="bg-gray-100 dark:bg-darkTwo p-5 lg:p-10 mt-16 rounded-3xl shadow-md">
+      <div className="bg-gray-100 dark:bg-gray-950/60 p-5 lg:p-10 mt-16 rounded-3xl shadow-md">
       <h2 className="text-2xl font-bold mb-6">Tips & Resources</h2>
 
       {/* Tips Section */}

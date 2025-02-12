@@ -8,6 +8,7 @@ import { FaSearch } from "react-icons/fa";
 import { Helmet } from "react-helmet";
 import { useLoaderData } from "react-router-dom";
 import Container from "../../components/container/Container";
+import SectionHeader from "../../components/container/SectionHeader";
 
 const AllLostAndFoundItems = () => {
   const API_Link = useAPI_Link();
@@ -91,11 +92,10 @@ const AllLostAndFoundItems = () => {
         <title>All Items | Track & Retrieve</title>
       </Helmet>
       <Container>
-
-          <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-800 dark:text-gray-200">
-            All <span className="text-error">Lost</span> &{" "}
-            <span className="text-info">Found</span> Items
-          </h1>
+          <SectionHeader>
+          All <span className="text-error">Lost</span> &{" "}
+          <span className="text-info">Found</span> Items
+          </SectionHeader>
 
           <div className="w-full lg:w-2/3 mx-auto bg-gray-50 dark:bg-gray-800 shadow-lg dark:shadow-xl py-4 px-3 mt-6 rounded-xl border dark:border-gray-700">
             <form

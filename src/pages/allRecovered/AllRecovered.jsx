@@ -11,6 +11,7 @@ import { useState } from "react";
 import RecoveredCard from "./RecoveredCard";
 import { Helmet } from "react-helmet";
 import Container from "../../components/container/Container";
+import SectionHeader from "../../components/container/SectionHeader";
 
 const AllRecovered = () => {
   const { user } = useContextValue();
@@ -49,9 +50,7 @@ const AllRecovered = () => {
       </Helmet>
 
       <Container>
-        <h1 className="text-2xl md:text-4xl font-bold text-center text-gray-800 dark:text-gray-200">
-          Recovered Items
-        </h1>
+        <SectionHeader>Recovered Items</SectionHeader>
 
         {items?.length === 0 ? (
           <div className="max-w-lg mx-auto mt-14 rounded-full overflow-hidden">
@@ -87,7 +86,7 @@ const AllRecovered = () => {
               <div className="overflow-x-auto mt-5">
                 <table className="table table-zebra">
                   {/* head */}
-                  <thead className="bg-base-300 text-darkTwo dark:text-lightTwo text-sm">
+                  <thead className="bg-base-300 dark:bg-gray-950/60 text-darkTwo dark:text-lightTwo text-sm">
                     <tr>
                       <th>#</th>
                       <th>Recovered Person</th>
